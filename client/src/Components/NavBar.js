@@ -26,7 +26,7 @@ const Navbar = () => {
               </Menu.Item>
             </Link>
 
-        </Menu>
+        </Menu>  
     )
 }
 

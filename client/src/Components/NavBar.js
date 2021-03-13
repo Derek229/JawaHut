@@ -26,6 +26,11 @@ export default class MenuExampleVerticalPointing extends Component {
           active={activeItem === 'droids'}
           onClick={this.handleItemClick}
         />
+        <Menu.Item
+          name='About'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        />
       </Menu>
     )
   }

@@ -23,7 +23,6 @@ const Jobs = () => {
   },  [])
   const deleteJob = async(id) => {
     let res = await axios.delete(`/jobs/${id}`)
-    // history.push('/jobs')
     window.location.reload()
 }
 
@@ -53,8 +52,7 @@ const Jobs = () => {
                 <Button >Edit</Button>
              </Link>
              <Button onClick={()=>deleteJob(job.id)}>Delete</Button>
-                {/* <Button >Delete</Button> */}
-             {/* </Link> */}
+
            </div>
         </Card.Content>
       </Card>

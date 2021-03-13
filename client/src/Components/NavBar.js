@@ -1,32 +1,33 @@
-import React, { Component } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 
-export default class MenuExampleVerticalPointing extends Component {
-  state = { activeItem: 'home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    const { activeItem } = this.state
-
+const Navbar = () => {
+    const {pathname} = useLocation()
     return (
-      <Menu pointing vertical>
-        <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name='Planets'
-          active={activeItem === 'planets'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name='Droids'
-          active={activeItem === 'droids'}
-          onClick={this.handleItemClick}
-        />
-      </Menu>
+        <Menu>
+            <Link to='/'>
+                <Menu.Item active={pathname == '/'}>
+                    Home
+                </Menu.Item>
+            </Link>
+            <Link to='/planets' >
+                <Menu.Item active={pathname == '/planets'}>
+                    Planets
+              </Menu.Item>
+            </Link>
+            <Link to='/jobs'>
+                <Menu.Item active={pathname == '/jobs'}>
+                    Jobs
+              </Menu.Item>
+            </Link>
+            <Link to='/about' >
+                <Menu.Item  active={pathname == '/about'}>
+                    About
+              </Menu.Item>
+            </Link>
+
+        </Menu>
     )
-  }
 }
+
+export default Navbar

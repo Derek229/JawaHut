@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
 
 
 const Planets = () => {
@@ -37,8 +38,12 @@ const Planets = () => {
 
   return (
     <div>
-      <h1>Hello</h1>
-			{renderPlanets()}
+      <h1>Select your Planet</h1>
+			<Link to='/planets/new'>
+				<Button>Add A New Planet</Button>
+			</Link>
+
+			<Button>{renderPlanets()}Delete</Button>
     </div>
   )
 }

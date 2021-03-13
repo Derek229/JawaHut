@@ -25,14 +25,14 @@ Job.destroy_all
     10.times do
       planet.droids.create(
         name:Faker::Movies::StarWars.droid,
-				description:Faker::Movies::StarWars.call_sign,
+        description:Fa
         price:Faker::Commerce.price
       )
     end
 
 
-    Job.create( name:'Jedi', company:'Jedi Council', hourly_rate:'2,000' )
-    Job.create(name:'Stormtrooper', company:'Galactic Empire', hourly_rate:'5,500' )
-    Job.create(name:'BountyHunter', company:'Jabbas Palace', hourly_rate:'6,000' )
+    Job.create( name:'Jedi', description:'swings laser sword' )
+    Job.create(name:'Stormtrooper', description:'misses all the time')
+    Job.create(name:'BountyHunter', description:'Shoots second')
   
 end

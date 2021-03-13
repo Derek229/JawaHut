@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Droids() {
+function Jobs() {
   return (
     <div>
-      
+      <h1>Jobs</h1>
     </div>
   )
 }
 
-export default Droids
+export default Jobs

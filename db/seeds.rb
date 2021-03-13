@@ -33,5 +33,5 @@ Job.destroy_all
     Job.create( name:'Jedi', description:'swings laser sword' )
     Job.create(name:'Stormtrooper', description:'misses all the time')
     Job.create(name:'BountyHunter', description:'Shoots second')
-  end
+  
 end

@@ -7,6 +7,7 @@ import Jobs from './Jobs'
 import About from './About'
 import NavBar from './Components/NavBar'
 import {Container} from "semantic-ui-react"
+import NewPlanetForm from './Components/NewPlanetForm'
 function App() {
   return (
    
@@ -16,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path='/planets' component={Planets} />
+				<Route exact path='/planets/new' component={NewPlanetForm} />
         <Route exact path='/planets/:id' component={Droids}/>
         <Route exact path='/jobs' component={Jobs}/>
         <Route exact path='/about' component={About}/>

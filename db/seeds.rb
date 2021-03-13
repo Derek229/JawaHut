@@ -16,10 +16,13 @@ Job.destroy_all
 3.times do
    planet= Planet.create(
     name:Faker::Movies::StarWars.planet)
-    
+
+
     10.times do
       planet.droids.create(
-         name:Faker::Movies::StarWars.droid,
+
+        name:Faker::Movies::StarWars.droid,
+
 				description:Faker::Movies::StarWars.call_sign,
         price:Faker::Commerce.price
       )

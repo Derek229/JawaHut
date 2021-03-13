@@ -1,17 +1,20 @@
 class JobsController < ApplicationController
-
+  before_action :set_jobs, only: [:index]
+  before_action :set_job, only: [:show]
+  
   def index
-    render json: Job.all
+    render json: @jobs
   end
 
   def show
-    job = Job.find(params[:id])
-    render json: {job: job}
+   render json: @job
   end
 
   def create
     job = Job.new(job_params)
     if (job.save)
+      render json: job
+    else
       render json: { errors: job.errors }, status: 422
     end
   end
@@ -30,6 +33,13 @@ class JobsController < ApplicationController
   end
 
   private
+  def set_jobs
+    @jobs = Job.all
+  end
+
+  def set_job
+    @job = Job.find(params[:id])
+  end
 
   def job_params
     params.require(:job).permit(:name, :company, :hourly_rate)

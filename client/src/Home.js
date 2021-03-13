@@ -1,10 +1,11 @@
-// import {link} from
+import React from 'react'
 
-const Home = () =>{
+function Home() {
   return (
     <div>
-      <h1>home!</h1>
+      
     </div>
   )
 }
+
 export default Home

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import {Button, Card} from 'semantic-ui-react'
 
 
@@ -21,6 +21,11 @@ const Jobs = () => {
   useEffect(()=> {
     getJobs()
   },  [])
+  const deleteJob = async(id) => {
+    let res = await axios.delete(`/jobs/${id}`)
+    // history.push('/jobs')
+    window.location.reload()
+}
 
   const renderJobs = () =>{
     return jobs.map ( job => {
@@ -47,6 +52,9 @@ const Jobs = () => {
              <Link to={`/jobs/${job.id}/edit`}>
                 <Button >Edit</Button>
              </Link>
+             <Button onClick={()=>deleteJob(job.id)}>Delete</Button>
+                {/* <Button >Delete</Button> */}
+             {/* </Link> */}
            </div>
         </Card.Content>
       </Card>

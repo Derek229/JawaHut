@@ -42,8 +42,8 @@ const Planets = () => {
 			<Link to='/planets/new'>
 				<Button>Add A New Planet</Button>
 			</Link>
-
-			<Button>{renderPlanets()}Delete</Button>
+		
+			{renderPlanets()}
     </div>
   )
 }
